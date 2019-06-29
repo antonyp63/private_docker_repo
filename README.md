@@ -32,12 +32,13 @@ Email Address []:
 # docker run -d -p 5000:5000 -v /docker-data/images:/var/lib/registry -v /docker-data/certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key -v `pwd`/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd --restart on-failure --name myregistry docker.io/registry
 
 ```
+### copy domain.crt to each edge cluster
 
 ```
 # scp -r /docker_data/certs/domain.crt 10.1.11.211:/root/
 ```
 
-log on to the remote server
+### log on to the remote server
 
 ```
 # mkdir -p /etc/docker/certs.d/docker-repo.pure.mel.lab:5000
