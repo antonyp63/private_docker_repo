@@ -35,7 +35,7 @@ Email Address []:
 ### copy domain.crt to each edge cluster
 
 ```
-# scp -r /docker_data/certs/domain.crt 10.1.11.211:/root/
+# scp -r /docker-data/certs/domain.crt 10.1.11.211:/root/
 ```
 
 ### log on to the remote server
@@ -44,4 +44,7 @@ Email Address []:
 # mkdir -p /etc/docker/certs.d/docker-repo.pure.mel.lab:5000
 # cp -rf /root/domain.crt /etc/docker/certs.d/docker-repo.pure.mel.lab\:5000/
 ```
-
+```
+docker push docker-repo.pure.mel.lab:5000/hyperkube:v1.13.5-ee
+docker push docker-repo.pure.mel.lab:5000/pause:3.1
+```
