@@ -41,10 +41,17 @@ Email Address []:
 ### log on to the remote server
 
 ```
-# mkdir -p /etc/docker/certs.d/docker-repo.pure.mel.lab:5000
-# cp -rf /root/domain.crt /etc/docker/certs.d/docker-repo.pure.mel.lab\:5000/
+mkdir -p /etc/docker/certs.d/docker-repo.pure.mel.lab:5000
+cp -rf /root/domain.crt /etc/docker/certs.d/docker-repo.pure.mel.lab\:5000/
 ```
 ```
 docker push docker-repo.pure.mel.lab:5000/hyperkube:v1.13.5-ee
 docker push docker-repo.pure.mel.lab:5000/pause:3.1
+```
+
+```
+image_repo: docker-repo.pure.mel.lab:5000
+docker_username: admin
+docker_password: Passw0rd
+ 
 ```
